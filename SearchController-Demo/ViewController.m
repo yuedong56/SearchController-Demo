@@ -17,7 +17,7 @@
     
 }
 
-- (IBAction)buttonAction:(id)sender
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[TableViewController new]];
     [self presentViewController:nav animated:YES completion:nil];
