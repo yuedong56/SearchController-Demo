@@ -50,9 +50,9 @@
         self.resultsController = [[SearchResultsController alloc] init];
         
         self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.resultsController];
-//        self.searchController.searchResultsUpdater = self.resultsController;
-//        self.searchController.delegate = self;
-//        self.searchController.searchBar.delegate = self;
+        self.searchController.searchResultsUpdater = self.resultsController;
+        self.searchController.delegate = self;
+        self.searchController.searchBar.delegate = self;
 
         self.searchController.obscuresBackgroundDuringPresentation = YES; //搜索时，背景色半透明
         self.searchController.hidesNavigationBarDuringPresentation = YES; //搜索时，隐藏导航栏
@@ -106,6 +106,40 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - UISearchControllerDelegate
+- (void)willPresentSearchController:(UISearchController *)searchController {
+    NSLog(@"%s", __FUNCTION__);
+}
+
+- (void)didPresentSearchController:(UISearchController *)searchController {
+    NSLog(@"%s", __FUNCTION__);
+}
+
+- (void)willDismissSearchController:(UISearchController *)searchController {
+    NSLog(@"%s", __FUNCTION__);
+}
+
+- (void)didDismissSearchController:(UISearchController *)searchController {
+    NSLog(@"%s", __FUNCTION__);
+}
+
+- (void)presentSearchController:(UISearchController *)searchController {
+    NSLog(@"%s", __FUNCTION__);
+}
+
+#pragma mark - UISearchBarDelegate
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
+{
+    NSLog(@"%s", __FUNCTION__);
+    return YES;
+}
+
+//点键盘的搜索
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    NSLog(@"%s", __FUNCTION__);
 }
 
 @end
