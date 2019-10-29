@@ -1,5 +1,5 @@
 //
-//  SceneDelegate.h
+//  SearchResultsController.h
 //  SearchController-Demo
 //
 //  Created by yuedongkui on 2019/10/29.
@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SceneDelegate : UIResponder <UIWindowSceneDelegate>
-
-@property (strong, nonatomic) UIWindow * window;
+@interface SearchResultsController : UIViewController <UISearchResultsUpdating>
 
 @end
 
